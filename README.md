@@ -55,6 +55,10 @@ The [`fixed`](../../tree/fixed) branch applies the proposed change with patch-pa
        }
 ```
 
+## Filed as
+
+- React Native: [react/react-native#59587](https://github.com/react/react-native/issues/59587)
+
 ## Environment
 
 Reproduced on macOS 27 (arm64) with JDK 17 and React Native 0.88.1. The failing step is the Gradle download-and-extract logic, which doesn't depend on the host OS.
