@@ -1,0 +1,17 @@
+pluginManagement { includeBuild("../node_modules/@react-native/gradle-plugin") }
+plugins { id("com.facebook.react.settings") }
+extensions.configure(com.facebook.react.ReactSettingsExtension){ ex -> ex.autolinkLibrariesFromCommand() }
+rootProject.name = 'ReproducerApp'
+include ':app'
+includeBuild('../node_modules/@react-native/gradle-plugin')
+
+// Build React Native (and therefore Hermes) from source, as apps that patch
+// React Native's native code do. This is what downloads the Hermes tarball.
+includeBuild('../node_modules/react-native') {
+  dependencySubstitution {
+    substitute(module("com.facebook.react:react-android")).using(project(":packages:react-native:ReactAndroid"))
+    substitute(module("com.facebook.react:react-native")).using(project(":packages:react-native:ReactAndroid"))
+    substitute(module("com.facebook.react:hermes-android")).using(project(":packages:react-native:ReactAndroid:hermes-engine"))
+    substitute(module("com.facebook.react:hermes-engine")).using(project(":packages:react-native:ReactAndroid:hermes-engine"))
+  }
+}
