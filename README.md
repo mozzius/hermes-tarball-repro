@@ -58,6 +58,7 @@ The [`fixed`](../../tree/fixed) branch applies the proposed change with patch-pa
 ## Filed as
 
 - React Native: [react/react-native#59587](https://github.com/react/react-native/issues/59587)
+- Fix: [react/react-native#59588](https://github.com/react/react-native/pull/59588) (the `fixed` branch of this repo applies its `unzipHermes` change)
 
 ## Environment
 
